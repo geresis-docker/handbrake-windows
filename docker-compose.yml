@@ -1,0 +1,10 @@
+# docker-compose run --rm handbrake-windows
+
+version: "3.8"
+
+services:
+  handbrake-windows:
+    container_name: handbrake-windows
+    image: geresis/handbrake-windows:1.3.3
+    volumes:
+      - "./data:/data"
