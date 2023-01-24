@@ -4,7 +4,7 @@ FROM ubuntu:22.04
 
 # VARIABLES
 ARG DEBIAN_FRONTEND=noninteractive
-ARG VERSION="1.6.0"
+ARG VERSION="1.6.1"
 
 # INFORMATION
 LABEL version=$VERSION
@@ -20,7 +20,7 @@ COPY app.py /app
 
 # UPDATE AND INSTALL DEPENDENCIES
 RUN apt-get update && \
-	apt-get install -y automake autoconf autopoint build-essential cmake gcc git intltool libtool libtool-bin m4 make meson nasm ninja-build patch pkg-config tar zlib1g-dev && \
+	apt-get install -y automake autoconf autopoint build-essential cmake gcc git intltool libtool libtool-bin m4 make meson nasm ninja-build patch pkg-config tar zlib1g-dev clang && \
 # Install the additional dependencies required to build the MinGW-w64 toolchain
 	apt-get install -y bison bzip2 curl flex g++ gzip pax && \
 # Additional for docker app.py
